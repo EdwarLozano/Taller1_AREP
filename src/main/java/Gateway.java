@@ -22,7 +22,7 @@ public class Gateway {
                 // Configuración de CORS
 
                 String path = exchange.getRequestURI().getPath();
-                String contentType = "text/html"; // Por defecto, asumimos HTML
+                String contentType = "text/html";
 
                 if (path.endsWith(".js")) {
                     contentType = "application/javascript";
