@@ -1,5 +1,5 @@
 import Controllers.MovieController;
-import Service.MovieServiceImp;
+import Service.MovieService.MovieServiceImp;
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -19,8 +19,6 @@ public class Gateway {
             HttpServer server = HttpServer.create(new InetSocketAddress(SERVER_PORT), 0);
             addCORSContext(server,"/movies", new MovieController(new MovieServiceImp()));
             server.createContext("/", exchange -> {
-
-                // Configuración de CORS
 
                 String path = exchange.getRequestURI().getPath();
                 String contentType = "text/html";
@@ -50,7 +48,6 @@ public class Gateway {
             });
             Executor executor = Executors.newFixedThreadPool(10);
             server.setExecutor(executor);
-
             server.start();
             System.out.println("Server started on port " + SERVER_PORT);
         }
