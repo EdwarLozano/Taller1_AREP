@@ -41,7 +41,7 @@ async function cargarPeliculas() {
                         </div>
                         <div class="info_pelicula" id="info_pelicula">
                             <h1 class="titulo">Película No Encontrada</h1>
-                            <p class="director">Verifica el nombre ingresado e intenta nueamente</p>
+                            <p class="director">Verifica el nombre ingresado e intenta nuevamente</p>
                         </div>`
 
 
