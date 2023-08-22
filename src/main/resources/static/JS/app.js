@@ -62,6 +62,18 @@ async function cargarPeliculas() {
     }
 }
 
+const searchInput = document.getElementById("search_input");
+
+
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        cargarPeliculas();
+    }
+});
+
+
+
 
 
 
