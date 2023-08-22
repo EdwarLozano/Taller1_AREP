@@ -19,6 +19,7 @@ public class Gateway {
             HttpServer server = HttpServer.create(new InetSocketAddress(SERVER_PORT), 0);
             addCORSContext(server,"/movies", new MovieController(new MovieServiceImp()));
             server.createContext("/", exchange -> {
+
                 // Configuración de CORS
 
                 String path = exchange.getRequestURI().getPath();
